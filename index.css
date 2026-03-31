@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+}
+       /* Navbar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 25px;
+    width: 95%;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.bar{
+    font-size: 35px;
+    margin-left: 10px;
+}
+.logo img{
+    height: 45px;
+    width: 150px; 
+}
+.search-box{
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 60px;
+}
+.search-box input{
+    width: 100%;
+    padding: 10px 10px 10px 50px;
+    font-size: 23px;
+    border-radius: 10px;
+    background-color: #333;
+    border: 1px solid gray;
+}
+.search-box i{
+    position: absolute;
+    font-size: 23px;
+    left: 20px;
+    top: 20px;
+    color: grey;
+}
+.cast{
+    font-size: 35px;
+}
+.round{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: orangered;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+
+      /* Profile */
+
+
+#toggle{
+    display: none;
+}
+.round{
+    cursor: pointer;
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 260px;
+    background: #222;
+    color: white;
+    display: none;
+    border-radius: 10px;
+}
+.circle.big{
+    width: 45px;
+    height: 45px;
+    background-color: orangered;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+#toggle:checked ~ .dropdown{
+    display: block;
+}
+.user-info{
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+.user-info p{
+    margin: 2px 0;
+}
+.user-info a{
+    color: #3ea6ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 12px 15px;
+    cursor: pointer;
+}
+ul li:hover{
+    background-color: #333;
+}
+hr{
+    border: 0.5px solid #4444;
+}
+
+     /* Sidebar */
+
+.sidebar{
+    color: white;
+    height: 200vh;
+    width: 200px;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: bold;
+    /* text-align: center; */
+}
+.side{
+    display: flex;
+}
+.sidebar {
+    z-index: 1;
+}
+.sidebar li{
+    display: flex;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+.sidebar a{
+    color: white;
+}
+
+     /* main
+     Titles */
+.content{
+    display: flex;
+    
+}
+.titles{
+    /* margin-left: 210px; */
+    margin-top: 80px;
+    color: white;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 30px;
+}
+.title{
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    flex: 0 0 auto;
+    font-weight: bold;
+}
+.title:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+    /* Songs */
+
+/* Scrollbar size */
+.songs::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.songs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.songs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.songs::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.song span{
+    color: grey;
+    font-size: 20px;
+}
+.song p{
+    font-size: 20px;
+}
+.song img{
+    height: 230px;
+    width: 230px;
+}
+h1{
+    color: white;
+    /* margin-left: 210px; */
+    margin-top: 100px;
+}
+.song:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.song span:hover{
+    text-decoration: underline white; 
+}
+
+   /* Community */
+
+/* Scrollbar size */
+.community::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.community::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.community::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.community::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.com span{
+    color: grey;
+    font-size: 20px;
+}
+.com p{
+    font-size: 20px;
+}
+.com img{
+    height: 230px;
+    width: 230px;
+}
+.com:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.com span:hover{
+    text-decoration: underline white; 
+}
+
+     /* Quickpicks */
+
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+  /* margin-left: 210px; */
+  margin-top: 100px;
+  font-size: 22px;
+}
+
+.cir {
+  width: 40px;
+  height: 40px;
+  background: orangered;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.picks {
+  display: grid;
+  margin-top: 48px;
+
+  /* 4 rows fixed */
+  grid-template-rows: repeat(4, 80px);
+
+  /* Make items fill column-wise */
+  grid-auto-flow: column;
+
+  /* Each column width */
+  grid-auto-columns: 320px;
+
+  gap: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px;
+}
+.pick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #181818;
+  padding: 10px;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.pick img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.pick p {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.pick span {
+  font-size: 18px;
+  color: #aaa;
+}
+.pick:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.pick span:hover{
+    text-decoration: underline white; 
+}
+
+/* scrollbar */
+.picks::-webkit-scrollbar {
+  height: 10px;
+}
+
+.picks::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.picks::-webkit-scrollbar-track {
+    background: transparent;
+}
+.picks::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+   /* Hits */
+
+.hit span{
+    color: grey;
+    font-size: 20px;
+}
+.hit p{
+    font-size: 20px;
+}
+.hit img{
+    height: 230px;
+    width: 230px;
+}
+/* Scrollbar size */
+.hits::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.hits::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.hits::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.hits::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.hit:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.hit span:hover{
+    text-decoration: underline white; 
+}
+
+   /* Loops */
+
+.loop span{
+    color: grey;
+    font-size: 20px;
+}
+.loop p{
+    font-size: 20px;
+}
+.loop img{
+    height: 230px;
+    width: 230px;
+}
+button{
+    height: 35px;
+    width: 70px;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid #333;
+    color: white;
+    font-size: 18px;
+    margin-left: 1600px;
+}
+.loop:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.loop span:hover{
+    text-decoration: underline white; 
+}
+
+.song,
+.com,
+.hit,
+.loop {
+    min-width: 230px;  
+}
+
+.songs,
+.community,
+.hits,
+.loops {
+    height: 340px;
+    margin-top: 40px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 20px;
+    color: white;
+    padding: 20px;
+}
+.titles,.head,h1,.picks{
+    padding: 0 20px;
+}
+.main{
+    flex: 1;
+    overflow: hidden;
+}
+
+
+     /* Media query  */
+     /* Mobile */
+
+@media (max-width: 576px) {
+
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 10px;
+  }
+  .left, .right {
+    gap: 10px;
+  }
+  .logo img { width: 80px; }
+  .bar, .cast { font-size: 20px; }
+  .round { width: 30px; height: 30px; font-size: 12px; }
+
+  /* Search */
+  .search-box { max-width: 150px; height: 35px; }
+  .search-box input { font-size: 14px; padding-left: 30px; }
+
+  /* Sidebar hidden */
+  .sidebar { display: none; }
+  .content { flex-direction: column; }
+
+  /* Titles & Quick Picks */
+  .title { font-size: 14px; padding: 6px; }
+  .picks { grid-template-rows: repeat(3, 70px); grid-auto-columns: 180px; gap: 10px; }
+  .pick img { width: 50px; height: 50px; }
+  .pick p { font-size: 13px; }
+  .pick span { font-size: 11px; }
+
+  /* Cards */
+  .song img, .com img, .hit img, .loop img { width: 120px; height: 120px; }
+  .song, .com, .hit, .loop { min-width: 120px; }
+  button { display: none; }
+
+  h1 { font-size: 18px; margin-top: 30px; }
+}
+@media (max-width: 768px) {
+
+  /* Navbar in one line */
+  .navbar { flex-wrap: nowrap; }
+  .left, .right { gap: 15px; }
+  .logo img { width: 100px; }
+  .bar, .cast { font-size: 25px; }
+  .round { width: 35px; height: 35px; font-size: 14px; }
+
+  /* Search */
+  .search-box { max-width: 250px; height: 45px; }
+  .search-box input { font-size: 16px; }
+
+  /* Sidebar smaller */
+  .sidebar { width: 120px; font-size: 14px; }
+
+  /* Titles & Quick Picks */
+  .title { font-size: 16px; }
+  .picks { grid-template-rows: repeat(4, 70px); grid-auto-columns: 220px; }
+  .pick p { font-size: 15px; }
+  .pick span { font-size: 13px; }
+
+  /* Cards */
+  .song img, .com img, .hit img, .loop img { width: 150px; height: 150px; }
+  .song, .com, .hit, .loop { min-width: 150px; }
+  h1 { font-size: 22px; }
+  button { margin-left: 0; }
+}

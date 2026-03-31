@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+}
+       /* Navbar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 25px;
+    width: 95%;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.bar{
+    font-size: 35px;
+    margin-left: 10px;
+}
+.logo img{
+    height: 45px;
+    width: 150px; 
+}
+.search-box{
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 60px;
+}
+.search-box input{
+    width: 100%;
+    padding: 10px 10px 10px 50px;
+    font-size: 23px;
+    border-radius: 10px;
+    background-color: #333;
+    border: 1px solid gray;
+}
+.search-box i{
+    position: absolute;
+    font-size: 23px;
+    left: 20px;
+    top: 20px;
+    color: grey;
+}
+.cast{
+    font-size: 35px;
+}
+.round{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: orangered;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+
+      /* Profile */
+
+
+#toggle{
+    display: none;
+}
+.round{
+    cursor: pointer;
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 260px;
+    background: #222;
+    color: white;
+    display: none;
+    border-radius: 10px;
+}
+.circle.big{
+    width: 45px;
+    height: 45px;
+    background-color: orangered;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+#toggle:checked ~ .dropdown{
+    display: block;
+}
+.user-info{
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+.user-info p{
+    margin: 2px 0;
+}
+.user-info a{
+    color: #3ea6ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 12px 15px;
+    cursor: pointer;
+}
+ul li:hover{
+    background-color: #333;
+}
+hr{
+    border: 0.5px solid #4444;
+}
+
+     /* Sidebar */
+
+.sidebar{
+    color: white;
+    height: 200vh;
+    width: 200px;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.side{
+    display: flex;
+}
+.sidebar {
+    z-index: 1;
+}
+.sidebar li{
+    display: flex;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+.sidebar a{
+    color: white;
+}
+
+     /* main
+     Titles */
+.content{
+    display: flex;
+    
+}
+.titles{
+    /* margin-left: 210px; */
+    margin-top: 80px;
+    color: white;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+}
+.title{
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 40px;
+    /* flex: 0 0 auto; */
+    font-weight: bold;
+    margin-left: 200px;
+}
+.title:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+    /* Albums */
+
+.albums{
+    display: flex;
+    overflow: hidden;
+    height: 340px;
+    width: 1500px;
+    overflow-x: auto;
+    color: white;
+    gap: 20px;
+    margin-top: 40px;
+    margin-left: 210px;
+}
+/* Scrollbar size */
+.albums::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.albums::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.albums::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.albums::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.album span{
+    color: grey;
+    font-size: 20px;
+}
+.album p{
+    font-size: 20px;
+}
+.album img{
+    height: 230px;
+    width: 230px;
+}
+h1{
+    color: white;
+    margin-left: 210px;
+    margin-top: 100px;
+}
+h1:hover{
+    text-decoration: underline white;
+}
+.album:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.album span:hover{
+    text-decoration: underline white; 
+}
+
+  /* Genres */
+
+.genres {
+  display: grid;
+  margin-left: 200px;
+  color: white;
+  margin-top: 30px;
+
+
+  /* 4 rows fixed */
+  grid-template-rows: repeat(4, 80px);
+
+  /* Make items fill column-wise */
+  grid-auto-flow: column;
+
+  /* Each column width */
+  grid-auto-columns: 235px;
+
+  gap: 15px;
+
+  width: 1500px; /* show only 3 columns */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.genre{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #444;
+  padding: 10px;
+  border-radius: 8px;
+  height: 100%;
+  font-size: 20px;
+}
+.genre:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+/* Scrollbar size */
+.genres::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.genres::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.genres::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.genres::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+   /* songs */
+
+.songs{
+    display: flex;
+    overflow: hidden;
+    height: 330px;
+    width: 1500px;
+    overflow-x: auto;
+    color: white;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.song span{
+    color: grey;
+}
+.song img{
+    height: 230px;
+    width: 230px;
+}
+/* Scrollbar size */
+.songs::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Hide track */
+.songs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show only thumb */
+.songs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.songs::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.song:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.song span:hover{
+    text-decoration: underline white; 
+}
+
+
+button{
+    height: 35px;
+    width: 70px;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid #333;
+    color: white;
+    font-size: 18px;
+    margin-left: 1600px;
+}
