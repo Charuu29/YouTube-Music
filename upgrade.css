@@ -7,9 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-    background: linear-gradient(180deg,black,rgb(51, 51, 103));
+    background: linear-gradient(to bottom,#061b25, #000,#0f2027);
     font-family: "Roboto", sans-serif;
 }
+
        /* Navbar */
 
 .navbar{
@@ -17,8 +18,12 @@ body{
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 25px;
-    width: 95%;
+    padding: 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: black;
 }
 .left{
     display: flex;
@@ -50,6 +55,7 @@ body{
     width: 100%;
     padding: 10px 10px 10px 50px;
     font-size: 23px;
+    color: white;
     border-radius: 10px;
     background-color: #333;
     border: 1px solid gray;
@@ -141,7 +147,7 @@ hr{
     border: 0.5px solid #4444;
 }
 
-  /* main */
+     /* main */
     /* Title */
 body{
     color: white;
@@ -169,7 +175,7 @@ button{
     font-weight: bold;
     margin-top: 40px;
 }
-p{
+.main p{
     margin-top: 80px;
     font-size: 2rem;
 }
@@ -199,25 +205,220 @@ h1{
     /* Bottom */
 
 .bottom{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-around; */
     background-color: #333;
-    /* height: 200px; */
     width: 80%;
     margin: 40px auto;
     border-radius: 30px;
-    /* margin-top: 50px; */
 }
 span{
     color: blue;
 }
-p{
+.bottom p{
     margin-left: 40px;
-    /* margin-bottom: 20px; */
 }
 .bottom h2{
     margin-left: 40px;
     font-size: 4rem;
 }
- 
+     /* Media Query */
+    /* Mobile */
+@media (max-width: 576px){
+
+    .search-box{
+        display: none;
+    }
+
+    .left{
+        gap: 15px;
+    }
+
+    .logo img{
+        width: 100px;
+        height: 30px;
+    }
+
+    .bar, .cast{
+        font-size: 22px;
+    }
+
+    .round{
+        width: 35px;
+        height: 35px;
+    }
+
+    .title{
+        font-size: 2rem;
+        margin-top: 60px;
+    }
+
+    .content{
+        font-size: 2rem;
+        line-height: 40px;
+        margin-top: 30px;
+    }
+
+    p{
+        font-size: 1rem;
+        margin-top: 30px;
+    }
+
+    button{
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    h1{
+        font-size: 2rem;
+        margin-top: 80px;
+    }
+
+    .ads{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .ad img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .bottom{
+        width: 95%;
+        padding: 20px;
+    }
+
+    .bottom h2{
+        font-size: 1.5rem;
+    }
+}
+        /* Tablet */
+@media (min-width: 576px) and (max-width: 768px){
+
+    .search-box{
+        width: 250px;
+        height: 45px;
+    }
+
+    .search-box input{
+        font-size: 16px;
+    }
+
+    .title{
+        font-size: 2.5rem;
+    }
+
+    .content{
+        font-size: 2.5rem;
+        line-height: 50px;
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    .ads{
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .ad{
+        width: 45%;
+    }
+
+    .bottom h2{
+        font-size: 2rem;
+    }
+}
+    /* Small Laptop */
+@media (min-width: 768px) and (max-width: 992px){
+
+    .search-box{
+        width: 350px;
+    }
+
+    .title{
+        font-size: 3rem;
+    }
+
+    .content{
+        font-size: 3rem;
+        line-height: 70px;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    .ads{
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .ad{
+        width: 40%;
+    }
+}
+    /*Large Laptop */
+@media (min-width: 992px) and (max-width: 1200px){
+
+    .search-box{
+        width: 450px;
+    }
+
+    .title{
+        font-size: 3.5rem;
+    }
+
+    .content{
+        font-size: 4rem;
+        line-height: 90px;
+    }
+
+    h1{
+        font-size: 5rem;
+    }
+
+    .ads{
+        gap: 30px;
+    }
+
+    .ad{
+        width: 30%;
+    }
+}
+    /* Large Desktop */
+@media (min-width: 1200px) and (max-width: 1400px){
+
+    .search-box{
+        width: 550px;
+    }
+
+    .title{
+        font-size: 4rem;
+    }
+
+    .content{
+        font-size: 4.5rem;
+        line-height: 110px;
+    }
+
+    h1{
+        font-size: 5.5rem;
+    }
+
+    .ads{
+        gap: 40px;
+    }
+
+    .ad{
+        width: 28%;
+    }
+}

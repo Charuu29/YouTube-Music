@@ -7,8 +7,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-    background-color: black;
+    background: linear-gradient(to bottom,#061b25, #000,#0f2027);
     font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
 }
        /* Navbar */
 
@@ -17,39 +18,46 @@ body{
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 25px;
-    width: 95%;
+    padding: 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: black;
 }
 .left{
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 60px;
+    gap: 20px;
 }
 .right{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
 .bar{
     font-size: 35px;
-    margin-left: 10px;
+    margin-left: 0;
 }
 .logo img{
-    height: 45px;
-    width: 150px; 
+    max-width: 100%;
+    height: auto;
+
 }
 .search-box{
     display: flex;
+    flex: 1;
     position: relative;
-    width: 600px;
+    max-width: 600px;
     height: 60px;
 }
 .search-box input{
     width: 100%;
     padding: 10px 10px 10px 50px;
     font-size: 23px;
+    color: white;
     border-radius: 10px;
     background-color: #333;
     border: 1px solid gray;
@@ -143,38 +151,68 @@ hr{
 
      /* Sidebar */
 
+
 .sidebar{
     color: white;
-    height: 200vh;
-    width: 200px;
+    height: 100vh;
+    width: 90px;
     flex-shrink: 0;
-    font-size: 20px;
-    font-weight: bold;
-    /* text-align: center; */
+    transition: 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
-.side{
-    display: flex;
+.sidebar:hover{
+    width: 220px;
 }
-.sidebar {
-    z-index: 1;
+.sidebar ul{
+    padding: 0;
+    margin-top: 20px;
 }
 .sidebar li{
-    display: flex;
-    margin-left: 15px;
-    margin-top: 25px;
+    display: block;                 
+    border-radius: 10px;
 }
 .sidebar a{
+    display: flex;
+    gap: 20px;
+    padding: 12px;
     color: white;
+    width: 100%;                  
+    border-radius: 10px;
+}
+.sidebar i{
+    font-size: 30px;
+    min-width: 24px;              
+    text-align: center;
+}
+.sidebar span{
+    opacity: 0;
+    font-size: 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+.sidebar:hover span{
+    opacity: 1;
+}
+.sidebar:hover a{
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+.sidebar a:hover{
+    background-color: #2a2a2a;
+    cursor: pointer;
 }
 
      /* main
      Titles */
+.main{
+    flex: 1;
+    overflow: hidden;
+}
 .content{
-    display: flex;
-    
+    display: flex;   
 }
 .titles{
-    /* margin-left: 210px; */
     margin-top: 80px;
     color: white;
     display: flex;
@@ -197,27 +235,19 @@ hr{
 
     /* Songs */
 
-/* Scrollbar size */
 .songs::-webkit-scrollbar {
     height: 10px;
 }
-
-/* Hide track */
 .songs::-webkit-scrollbar-track {
     background: transparent;
 }
-
-/* Show only thumb */
 .songs::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
-
-/* Hover effect */
 .songs::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
 .song span{
     color: grey;
     font-size: 20px;
@@ -231,7 +261,6 @@ hr{
 }
 h1{
     color: white;
-    /* margin-left: 210px; */
     margin-top: 100px;
 }
 .song:hover{
@@ -244,23 +273,16 @@ h1{
 
    /* Community */
 
-/* Scrollbar size */
 .community::-webkit-scrollbar {
     height: 10px;
 }
-
-/* Hide track */
 .community::-webkit-scrollbar-track {
     background: transparent;
 }
-
-/* Show only thumb */
 .community::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
-
-/* Hover effect */
 .community::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
@@ -290,7 +312,6 @@ h1{
   align-items: center;
   margin-bottom: 20px;
   color: white;
-  /* margin-left: 210px; */
   margin-top: 100px;
   font-size: 22px;
 }
@@ -310,16 +331,9 @@ h1{
 .picks {
   display: grid;
   margin-top: 48px;
-
-  /* 4 rows fixed */
   grid-template-rows: repeat(4, 80px);
-
-  /* Make items fill column-wise */
   grid-auto-flow: column;
-
-  /* Each column width */
   grid-auto-columns: 320px;
-
   gap: 15px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -333,21 +347,32 @@ h1{
   padding: 10px;
   border-radius: 8px;
   height: 100%;
+  position: relative;
 }
-
+.icon{
+    position: absolute;
+    bottom: 20px;
+    font-size: 40px;
+    color: white; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+.pick:hover .icon {
+  opacity: 1;
+  transform: translateY(0);
+}
 .pick img {
   width: 60px;
   height: 60px;
   border-radius: 6px;
   object-fit: cover;
 }
-
 .pick p {
   margin: 0;
   font-size: 18px;
   color: white;
 }
-
 .pick span {
   font-size: 18px;
   color: #aaa;
@@ -359,12 +384,9 @@ h1{
 .pick span:hover{
     text-decoration: underline white; 
 }
-
-/* scrollbar */
 .picks::-webkit-scrollbar {
   height: 10px;
 }
-
 .picks::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;
@@ -389,23 +411,16 @@ h1{
     height: 230px;
     width: 230px;
 }
-/* Scrollbar size */
 .hits::-webkit-scrollbar {
     height: 10px;
 }
-
-/* Hide track */
 .hits::-webkit-scrollbar-track {
     background: transparent;
 }
-
-/* Show only thumb */
 .hits::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
-
-/* Hover effect */
 .hits::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
@@ -438,7 +453,9 @@ button{
     border: 1px solid #333;
     color: white;
     font-size: 18px;
-    margin-left: 1600px;
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
 }
 .loop:hover{
     background-color: #333;
@@ -471,75 +488,513 @@ button{
 .titles,.head,h1,.picks{
     padding: 0 20px;
 }
-.main{
-    flex: 1;
-    overflow: hidden;
-}
 
 
-     /* Media query  */
+
+     /* Media Query  */
      /* Mobile */
-
 @media (max-width: 576px) {
 
+
   .navbar {
-    flex-wrap: nowrap;
-    padding: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
   }
-  .left, .right {
+
+  .left {
+    gap: 8px;
+  }
+
+  .right {
     gap: 10px;
   }
-  .logo img { width: 80px; }
-  .bar, .cast { font-size: 20px; }
-  .round { width: 30px; height: 30px; font-size: 12px; }
+  .bar{
+    margin-left: 0;
+  }
 
-  /* Search */
-  .search-box { max-width: 150px; height: 35px; }
-  .search-box input { font-size: 14px; padding-left: 30px; }
+  .logo img {
+    width: 80px;
+  }
 
-  /* Sidebar hidden */
-  .sidebar { display: none; }
-  .content { flex-direction: column; }
+  .bar,
+  .cast {
+    font-size: 20px;
+  }
 
-  /* Titles & Quick Picks */
-  .title { font-size: 14px; padding: 6px; }
-  .picks { grid-template-rows: repeat(3, 70px); grid-auto-columns: 180px; gap: 10px; }
-  .pick img { width: 50px; height: 50px; }
-  .pick p { font-size: 13px; }
-  .pick span { font-size: 11px; }
+  .round {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
 
-  /* Cards */
-  .song img, .com img, .hit img, .loop img { width: 120px; height: 120px; }
-  .song, .com, .hit, .loop { min-width: 120px; }
-  button { display: none; }
+  .search-box {
+    flex: 1;
+    max-width: 120px;
+    height: 35px;
+  }
 
-  h1 { font-size: 18px; margin-top: 30px; }
+  .search-box input {
+    font-size: 12px;
+    padding-left: 28px;
+  }
+
+  .search-box i {
+    font-size: 14px;
+    top: 10px;
+    left: 8px;
+  }
+  .content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .titles {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .picks {
+    grid-template-rows: repeat(3, 65px);
+    grid-auto-columns: 180px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .pick img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .pick p {
+    font-size: 12px;
+  }
+
+  .pick span {
+    font-size: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .song img,
+  .com img,
+  .hit img,
+  .loop img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .song,
+  .com,
+  .hit,
+  .loop {
+    min-width: 120px;
+  }
+
+  .song p,
+  .com p,
+  .hit p,
+  .loop p {
+    font-size: 13px;
+  }
+
+  .song span,
+  .com span,
+  .hit span,
+  .loop span {
+    font-size: 11px;
+  }
+
+  .songs,
+  .community,
+  .hits,
+  .loops {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  button {
+    display: none;
+  }
 }
+
+    /* Tablet */
+
 @media (max-width: 768px) {
 
-  /* Navbar in one line */
-  .navbar { flex-wrap: nowrap; }
-  .left, .right { gap: 15px; }
-  .logo img { width: 100px; }
-  .bar, .cast { font-size: 25px; }
-  .round { width: 35px; height: 35px; font-size: 14px; }
+  .navbar {
+    padding-left: 8px;
+    padding-left: 15px;
+  }
 
-  /* Search */
-  .search-box { max-width: 250px; height: 45px; }
-  .search-box input { font-size: 16px; }
+  .left {
+    gap: 12px;
+  }
 
-  /* Sidebar smaller */
-  .sidebar { width: 120px; font-size: 14px; }
+  .right {
+    gap: 15px;
+  }
 
-  /* Titles & Quick Picks */
-  .title { font-size: 16px; }
-  .picks { grid-template-rows: repeat(4, 70px); grid-auto-columns: 220px; }
-  .pick p { font-size: 15px; }
-  .pick span { font-size: 13px; }
+  .logo img {
+    width: 100px;
+  }
 
-  /* Cards */
-  .song img, .com img, .hit img, .loop img { width: 150px; height: 150px; }
-  .song, .com, .hit, .loop { min-width: 150px; }
-  h1 { font-size: 22px; }
-  button { margin-left: 0; }
+  .bar,
+  .cast {
+    font-size: 24px;
+  }
+
+  .round {
+    width: 34px;
+    height: 34px;
+  }
+
+  .search-box {
+    flex: 1;
+    max-width: 220px;
+    height: 40px;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  .picks {
+    grid-template-rows: repeat(4, 70px);
+    grid-auto-columns: 220px;
+  }
+
+  .pick p {
+    font-size: 14px;
+  }
+
+  .pick span {
+    font-size: 12px;
+  }
+
+  .song img,
+  .com img,
+  .hit img,
+  .loop img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .song,
+  .com,
+  .hit,
+  .loop {
+    min-width: 150px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    margin-left: auto;
+  }
 }
+
+   /* Small Laptop */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    padding-left: 12px;
+    padding-right: 20px;
+  }
+
+  .left {
+    gap: 15px;
+  }
+
+  .right {
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .bar,
+  .cast {
+    font-size: 28px;
+  }
+
+  .round {
+    width: 38px;
+    height: 38px;
+  }
+
+  .search-box {
+    max-width: 320px;
+    height: 50px;
+  }
+
+  .search-box input {
+    font-size: 16px;
+  }
+
+  .sidebar {
+    width: 150px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .picks {
+    grid-template-rows: repeat(4, 75px);
+    grid-auto-columns: 260px;
+  }
+
+  .song img,
+  .com img,
+  .hit img,
+  .loop img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .song,
+  .com,
+  .hit,
+  .loop {
+    min-width: 180px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+     /* Large Laptop */
+
+@media (max-width: 1200px) {
+
+  .navbar {
+    padding-left: 15px;
+  }
+
+  .left {
+    gap: 18px;
+  }
+
+  .right {
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 130px;
+  }
+
+  .search-box {
+    max-width: 450px;
+    height: 55px;
+  }
+
+  .search-box input {
+    font-size: 18px;
+  }
+
+  .sidebar {
+    width: 180px;
+    font-size: 18px;
+  }
+
+  .titles {
+    gap: 25px;
+  }
+
+  .title {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .picks {
+    grid-template-rows: repeat(4, 80px);
+    grid-auto-columns: 280px;
+    gap: 15px;
+  }
+
+  .pick img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pick p {
+    font-size: 17px;
+  }
+
+  .pick span {
+    font-size: 14px;
+  }
+
+  .song img,
+  .com img,
+  .hit img,
+  .loop img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .song,
+  .com,
+  .hit,
+  .loop {
+    min-width: 200px;
+  }
+
+  .song p,
+  .com p,
+  .hit p,
+  .loop p {
+    font-size: 17px;
+  }
+
+  .song span,
+  .com span,
+  .hit span,
+  .loop span {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
+
+    /* Large Desktop */
+
+@media (min-width: 1400px) {
+
+  .navbar {
+    padding-left: 25px;
+    padding-right: 40px;
+  }
+
+  .left {
+    gap: 25px;
+  }
+
+  .right {
+    gap: 30px;
+  }
+
+  .logo img {
+    width: 160px;
+  }
+
+  .search-box {
+    max-width: 700px;
+    height: 65px;
+  }
+
+  .search-box input {
+    font-size: 22px;
+  }
+
+  .sidebar {
+    width: 220px;
+    font-size: 20px;
+  }
+
+  .main {
+    padding: 0 40px;
+  }
+
+  .titles {
+    gap: 35px;
+  }
+
+  .title {
+    font-size: 20px;
+    padding: 15px 18px;
+  }
+
+  .picks {
+    grid-auto-columns: 320px;
+    gap: 20px;
+  }
+
+  .pick img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .pick p {
+    font-size: 19px;
+  }
+
+  .pick span {
+    font-size: 16px;
+  }
+
+  .song img,
+  .com img,
+  .hit img,
+  .loop img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .song,
+  .com,
+  .hit,
+  .loop {
+    min-width: 240px;
+  }
+
+  .song p,
+  .com p,
+  .hit p,
+  .loop p {
+    font-size: 19px;
+  }
+
+  .song span,
+  .com span,
+  .hit span,
+  .loop span {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-top: 80px;
+  }
+
+  .songs,
+  .community,
+  .hits,
+  .loops {
+    gap: 30px;
+  }
+}
+
