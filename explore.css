@@ -193,6 +193,7 @@ hr{
     font-size: 25px;
     white-space: nowrap;
     transition: 0.3s;
+    color: white;
 }
 
 .sidebar:hover span{
@@ -443,7 +444,9 @@ button{
     }
 
     .search-box{
-        display: none;
+        flex: 1;
+        height: 45px;
+        max-width: 180px;
     }
 
     .bar, .cast{
@@ -528,7 +531,8 @@ button{
 @media (min-width: 576px) and (max-width: 768px){
 
     .search-box{
-        width: 250px;
+        flex: 1;
+        max-width: 250px;
         height: 45px;
     }
 

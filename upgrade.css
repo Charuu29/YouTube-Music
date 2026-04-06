@@ -223,9 +223,9 @@ span{
      /* Media Query */
     /* Mobile */
 @media (max-width: 576px){
-
     .search-box{
-        display: none;
+        width: 150px;
+        height: 45px;
     }
 
     .left{

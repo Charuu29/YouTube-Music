@@ -9,6 +9,7 @@
 body{
     background: linear-gradient(to bottom,#061b25, #000,#0f2027);
     font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
 }
        /* Navbar */
 
@@ -193,6 +194,7 @@ hr{
     font-size: 25px;
     white-space: nowrap;
     transition: 0.3s;
+    color: white;
 }
 
 .sidebar:hover span{
@@ -308,12 +310,19 @@ span{
     }
 
     .sidebar{
+        width: 60px;
+        display: block;
+    }
+    .sidebar span{
         display: none;
     }
-
     .main{
         flex-direction: column;  
         align-items: center;
+        padding: 15px;
+    }
+    .content{
+        display: flex;
     }
 
     .content1{
@@ -349,10 +358,17 @@ span{
     .sidebar{
         width: 70px;
     }
+    .sidebar span{
+        display: none;
+    }
 
     .main{
         flex-direction: column;  
         align-items: center;
+        padding: 20px;
+    }
+    .content{
+        display: flex;
     }
 
     .content1{
