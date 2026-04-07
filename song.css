@@ -26,29 +26,29 @@ body{
     background: black;
 }
 .left{
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 60px;
+    gap: 20px;
 }
 .right{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
 .bar{
     font-size: 35px;
-    margin-left: 10px;
+    margin-left: 0;
 }
 .logo img{
-    height: 45px;
-    width: 150px; 
+    height: auto;
+    max-width: 100%; 
 }
 .search-box{
     display: flex;
+    flex: 1;
     position: relative;
-    width: 100%;
     max-width: 600px;
     height: 60px;
 }
@@ -293,25 +293,45 @@ span{
 
 @media (max-width: 576px){
 
+    .navbar{
+        padding: 10px;
+    }
+
     .left{
-        flex: 1 1 100%;
-        justify-content: space-between;
-        gap: 10px;
+        gap: 8px;
     }
 
     .right{
-        flex: 1 1 100%;
-        justify-content: flex-end;
+        gap: 10px;
+    }
+    .bar{
+        margin-left: 0;
+    }
+    .logo img {
+        width: 100px;
+        height: 30px;
+    }
+    .bar,
+    ,.cast {
+        font-size: 22px;
+    }
+    .round{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
 
     .search-box{
-        order: 3;
-        width: 100%;
+    flex: 1;
+    max-width: 120px;
+    height: 40px;
     }
 
     .sidebar{
         width: 60px;
-        display: block;
+        min-width: 60px;
+        flex: 0 0 60px;
+        overflow: hidden;
     }
     .sidebar span{
         display: none;

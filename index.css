@@ -496,7 +496,7 @@ button{
 
      /* Media Query  */
      /* Mobile */
-@media (max-width: 576.98px) {
+@media (max-width: 576px) {
 
   .navbar {
     padding: 10px;

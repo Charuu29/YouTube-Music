@@ -26,6 +26,7 @@ body{
     background: black;
 }
 .left{
+    flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -33,22 +34,22 @@ body{
 }
 .right{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
 .bar{
     font-size: 35px;
-    margin-left: 10px;
+    margin-left: 0;
 }
 .logo img{
-    height: 45px;
-    width: 150px; 
+    height: auto;
+    max-width: 100%; 
 }
 .search-box{
     display: flex;
+    flex: 1;
     position: relative;
-    width: 600px;
+    max-width: 600px;
     height: 60px;
 }
 .search-box input{
@@ -437,16 +438,24 @@ button{
     .navbar{
         padding: 10px;
     }
+    .left{
+        gap: 8px;
+    }
+    .right{
+        gap: 10px;
+    }
 
     .logo img{
         width: 100px;
         height: 30px;
     }
-
+    .bar{
+        margin-left: 0;
+    }
     .search-box{
         flex: 1;
-        height: 45px;
-        max-width: 180px;
+        height: 40px;
+        max-width: 120px;
     }
 
     .bar, .cast{
@@ -458,9 +467,19 @@ button{
         height: 35px;
         font-size: 14px;
     }
+    .content{
+        display: flex;
+        gap: 0;
+    }
 
     .sidebar{
         width: 60px;
+        min-width: 60px;
+        flex: 0 0 60px;
+        overflow: hidden;
+    }
+    .sidebar a{
+        padding: 10px 0;
     }
 
     .sidebar span{
